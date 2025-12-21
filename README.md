@@ -1,4 +1,4 @@
-#C++ Linked List Practice
+# C++ Linked List Practice
 
 This project implements a singly linked list in C++ to practice:
 - pointers and references
