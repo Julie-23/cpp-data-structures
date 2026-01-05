@@ -1,6 +1,8 @@
+//linkedList.hpp
 #include <string>
 #include "Node.hpp"
-
+#ifndef LINKEDLIST_HPP
+#define LINKEDLIST_HPP
 class LinkedList{
     private:
         Node* head;
@@ -11,5 +13,9 @@ class LinkedList{
         void remove(int value);
         bool search(int value);
         void printList();
+        bool isEmpty() const;
+        void removeFront();
+        int front() const;
     
-}
+};
+#endif
