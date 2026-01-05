@@ -1,3 +1,4 @@
+//linkedList.cpp
 #include "LinkedList.hpp"
 #include <iostream>
 
@@ -75,8 +76,30 @@ void LinkedList::printList(){
     return;
 }
 
-bool LinkedList::isEmpty(){
+bool LinkedList::isEmpty() const{
     if (size == 0){
-        
+        return true;
+    }else{
+        return false;       
+    }
+}
+
+void LinkedList::removeFront(){
+    if (head = nullptr){
+        return;
+    } else{
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        size--;
+    }
+
+}
+
+int LinkedList::front() const{
+    if (head == nullptr){
+        std::cerr<<"Error: List is empty";
+    } else{
+        return head->data;
     }
 }
