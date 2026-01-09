@@ -1,0 +1,37 @@
+Queue():
+    front = nullptr
+    rear = nullptr
+    size = 0
+isEmpty():
+    return size == 0
+enqueue(value):
+    create newNode
+    newNode.data = value
+    newNode.next = nullptr
+
+    if queue is empty:
+        front = newNode
+        rear = newNode
+    else:
+        rear.next = newNode
+        rear = newNode
+
+    size++
+dequeue():
+    if queue is empty:
+        error or return sentinel
+
+    temp = front
+    front = front.next
+    delete temp
+    size--
+
+    if queue is now empty:
+        rear = nullptr
+front():
+    if queue is empty:
+        error or return sentinel
+    return front.data
+~Queue():
+    while queue is not empty:
+        dequeue()
