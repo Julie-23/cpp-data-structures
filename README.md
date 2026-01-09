@@ -18,7 +18,7 @@ The focus is on **clean abstract data types (ADTs)**, **pointer-based memory man
 - Maintains internal size invariant
 - Separate interface (`.hpp`) and implementation (`.cpp`)
 
-### Stack (in progress)
+### Stack
 - Implemented as an ADT **on top of the linked list**
 - Enforces LIFO behavior
 - Planned operations:
@@ -26,6 +26,8 @@ The focus is on **clean abstract data types (ADTs)**, **pointer-based memory man
   - `pop`
   - `peek`
   - `isEmpty`
+ 
+  ### Queue (in progress)
 
 ---
 
