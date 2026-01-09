@@ -8,6 +8,7 @@ class LinkedList{
         Node* head;
         int size;
     public:
+        ~LinkedList();
         void insertFront(int value);
         void insertBack(int value);
         void remove(int value);
@@ -15,6 +16,7 @@ class LinkedList{
         void printList();
         bool isEmpty() const;
         void removeFront();
+        void removeBack();
         int front() const;
     
 };

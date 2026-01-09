@@ -2,9 +2,26 @@
 #include "LinkedList.hpp"
 #include <iostream>
 
+
+
 LinkedList::LinkedList(){
     head = nullptr;
     size = 0;
+}
+
+LinkedList::~LinkedList(){
+    Node* nextNode = nullptr;
+    Node* curr = head;
+
+    while (curr != nullptr){
+        nextNode = curr->next;
+        delete curr;
+        curr = nextNode;
+    }
+
+    head = nullptr;
+    size = 0;
+
 }
 
 void LinkedList::insertFront(int value){
@@ -94,6 +111,28 @@ void LinkedList::removeFront(){
         size--;
     }
 
+}
+
+void LinkedList::removeBack(){
+    if (head = nullptr){
+        return;
+    } else if (head->next == nullptr){
+        delete head;
+        head = nullptr;
+        return;
+    } else {
+        
+        Node* prev = nullptr;
+        Node* curr = head;
+
+        while (curr->next != nullptr){
+            prev = curr;
+            curr = curr->next;
+        }
+
+        prev->next = nullptr;
+        delete curr;
+    }
 }
 
 int LinkedList::front() const{
