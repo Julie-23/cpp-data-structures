@@ -1,6 +1,7 @@
 //linkedList.cpp
 #include "LinkedList.hpp"
 #include <iostream>
+#include <stdexcept>
 
 LinkedList::LinkedList(){
     head = nullptr;
@@ -85,7 +86,7 @@ void LinkedList::remove(int value){
 void LinkedList::printList(){
     Node* curr = head;
     while (curr != nullptr){
-        std::cout<<curr->data;
+        std::cout<<curr->data<<" ";
         curr = curr->next;
     }
     return;
@@ -100,7 +101,7 @@ bool LinkedList::isEmpty() const{
 }
 
 void LinkedList::removeFront(){
-    if (head = nullptr){
+    if (head == nullptr){
         return;
     } else{
         Node* temp = head;
@@ -112,12 +113,12 @@ void LinkedList::removeFront(){
 }
 
 void LinkedList::removeBack(){
-    if (head = nullptr){
+    if (head == nullptr){
         return;
     } else if (head->next == nullptr){
         delete head;
         head = nullptr;
-        return;
+        size--;
     } else {
         
         Node* prev = nullptr;
@@ -129,14 +130,15 @@ void LinkedList::removeBack(){
         }
 
         prev->next = nullptr;
+
         delete curr;
+        size--;
     }
 }
 
 int LinkedList::getFront() const{
     if (head == nullptr){
-        std::cerr<<"Error: List is empty";
-        return -1;
+        throw std::runtime_error("List is empty");
     } else{
         return head->data;
     }
