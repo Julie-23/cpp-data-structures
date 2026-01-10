@@ -35,4 +35,4 @@ This project implements **Stack** and **Queue** data structures in C++ using a *
 
 1. Compile the project using g++:
 ```bash
-g++ -std=c++17 LinkedList.cpp Stack.cpp Queue.cpp TestHarness.cpp -o test
+g++ -std=c++17 LinkedList.cpp Stack.cpp Queue.cpp DataStructs.cpp -o test
