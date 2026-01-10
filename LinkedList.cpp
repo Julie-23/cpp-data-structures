@@ -135,7 +135,7 @@ void LinkedList::removeBack(){
     }
 }
 
-int LinkedList::front() const{
+int LinkedList::getFront() const{
     if (head == nullptr){
         std::cerr<<"Error: List is empty";
     } else{

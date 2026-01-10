@@ -1,10 +1,6 @@
 //Stack.cpp
 #include "Stack.hpp"
-#include <iostream>
-
-Stack::Stack(){
-    LinkedList list;
-}
+#include <stdexcept>
 
 void Stack::push(int value){
     list.insertFront(value);
@@ -12,9 +8,9 @@ void Stack::push(int value){
 
 int Stack::pop(){
     if (list.isEmpty()){
-        std::cerr<<"Error: Cannot remove from empty Stack";
+        throw std::runtime_error("Error: Cannot remove from empty Stack");
     } else{
-        int value = list.front();
+        int value = list.getFront();
         list.removeFront();
         return value;
     }
@@ -22,11 +18,16 @@ int Stack::pop(){
 
 int Stack::peek() const{
     if (list.isEmpty()) {
-        std::cerr<<"Error: Stack is empty";
+        throw std::runtime_error("Error: Cannot peek an empty Stack");
     } else{
-        return list.front();
+        return list.getFront();
     }
 }
 bool Stack::isEmpty() const{
     return list.isEmpty();
+}
+
+//unnecessary?
+Stack::~Stack(){
+
 }

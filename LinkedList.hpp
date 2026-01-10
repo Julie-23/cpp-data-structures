@@ -17,7 +17,7 @@ class LinkedList{
         bool isEmpty() const;
         void removeFront();
         void removeBack();
-        int front() const;
+        int getFront() const;
     
 };
 #endif

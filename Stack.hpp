@@ -11,6 +11,7 @@ public:
     int pop();
     int peek() const;
     bool isEmpty() const;
+    ~Stack();
 };
 
 #endif

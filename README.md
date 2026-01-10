@@ -1,76 +1,38 @@
-# C++ Data Structures
+# Stack and Queue Implementations Using LinkedList
 
-This repository contains from-scratch implementations of core data structures in **C++**, developed as part of my coursework and self-study for **Data Structures & Abstractions**.  
-The focus is on **clean abstract data types (ADTs)**, **pointer-based memory management**, and **algorithmic reasoning**, rather than relying on the C++ STL.
+This project implements **Stack** and **Queue** data structures in C++ using a **LinkedList wrapper design**. The goal is to practice **object-oriented programming**, **dynamic memory management**, and **abstract data type (ADT) design** in C++.
 
----
-
-## Current Implementations
-
-### Singly Linked List
-- Node-based pointer implementation
-- Operations:
-  - Insert at front
-  - Insert at back
-  - Remove by value
-  - Search
-  - Check if empty
-- Maintains internal size invariant
-- Separate interface (`.hpp`) and implementation (`.cpp`)
+## Features
 
 ### Stack
-- Implemented as an ADT **on top of the linked list**
-- Enforces LIFO behavior
-- Planned operations:
-  - `push`
-  - `pop`
-  - `peek`
-  - `isEmpty`
- 
-  ### Queue (in progress)
+- LIFO (Last-In-First-Out) behavior
+- Supports:
+  - `push(int value)` – insert element at the top
+  - `pop()` – remove and return the top element
+  - `peek()` – view the top element without removing it
+  - `isEmpty()` – check if the stack is empty
 
----
+### Queue
+- FIFO (First-In-First-Out) behavior
+- Supports:
+  - `enqueue(int value)` – add element to the back
+  - `dequeue()` – remove the front element
+  - `getFront()` – view the front element without removing it
+  - `isEmpty()` – check if the queue is empty
 
-## Project Goals
+### LinkedList Wrapper
+- Both Stack and Queue delegate node management to a `LinkedList` class
+- Dynamic memory is automatically handled by the LinkedList destructor
+- No raw pointers are manually managed in Stack or Queue
 
-- Strengthen understanding of **data structures and abstractions**
-- Practice designing and implementing **ADTs**
-- Gain confidence with:
-  - Pointers
-  - Dynamic memory allocation
-  - Invariants and edge cases
-- Prepare for exams, whiteboard coding, and technical interviews
+## Files
+- `LinkedList.hpp` / `.cpp` – Node and linked list implementation
+- `Stack.hpp` / `.cpp` – Stack class wrapping LinkedList
+- `Queue.hpp` / `.cpp` – Queue class wrapping LinkedList
+- `DataStructs.cpp` – Test program demonstrating functionality
 
----
+## Usage
 
-## Design Principles
-
-- **Abstraction first**: Interfaces are separated from implementations
-- **No STL containers** for internal storage
-- **Efficiency-aware**: Operations are designed with time complexity in mind
-- **Readable & testable**: Code is organized into modular files
-
----
-
-## Technologies
-
-- Language: **C++**
-- Build style: Multi-file compilation
-- Tools: Git, GitHub
-
----
-
-## Planned Extensions
-
-- Queue ADT (linked list–based)
-- Binary Search Tree
-- Runtime analysis comparisons
-- Unit tests for core operations
-- CLI-based testing interface
-
----
-
-## Context
-
-This project is part of my ongoing self-learning in computer science and complements my coursework in **Data Structures & Abstractions**.
-
+1. Compile the project using g++:
+```bash
+g++ -std=c++17 LinkedList.cpp Stack.cpp Queue.cpp TestHarness.cpp -o test
