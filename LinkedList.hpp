@@ -9,6 +9,7 @@ class LinkedList{
         int size;
     public:
         ~LinkedList();
+        LinkedList();
         void insertFront(int value);
         void insertBack(int value);
         void remove(int value);

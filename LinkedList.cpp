@@ -2,8 +2,6 @@
 #include "LinkedList.hpp"
 #include <iostream>
 
-
-
 LinkedList::LinkedList(){
     head = nullptr;
     size = 0;
@@ -138,6 +136,7 @@ void LinkedList::removeBack(){
 int LinkedList::getFront() const{
     if (head == nullptr){
         std::cerr<<"Error: List is empty";
+        return -1;
     } else{
         return head->data;
     }
